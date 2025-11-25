@@ -63,6 +63,7 @@ IF OBJECT_ID('silver.crm_prd_info','U') IS NOT NULL
 GO
 CREATE TABLE silver.crm_prd_info (
 prd_id INT,
+cat_id VARCHAR(50),
 prd_key VARCHAR(50),
 prd_nm VARCHAR(50),
 prd_cost VARCHAR(50),
@@ -82,9 +83,9 @@ CREATE TABLE silver.crm_sales_details(
 sls_ord_num VARCHAR(50),
 sls_prd_key VARCHAR(50),
 sls_cust_id VARCHAR(50),
-sls_order_dt VARCHAR(50),
-sls_ship_dt VARCHAR(50),
-sls_due_dt VARCHAR(50),
+sls_order_dt DATE,
+sls_ship_dt DATE,
+sls_due_dt DATE,
 sls_sales INT,
 sls_quantity INT,
 sls_price INT,
