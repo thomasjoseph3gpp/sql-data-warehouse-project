@@ -9,6 +9,8 @@ Usage
 
 EXEC silver.load_silver;
 
+*/
+
 
 -- Data Cleaning
 
@@ -902,6 +904,7 @@ BEGIN
 		PRINT'========================================='
 	END CATCH
 END
+
 
 
 
