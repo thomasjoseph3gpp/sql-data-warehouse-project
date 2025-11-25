@@ -1,3 +1,15 @@
+/*
+
+-This is a stored procedure created in order to load silver layer.
+-By executing the command in the Usage, silver layer will get automatically loaded.
+-This procedure includes cleaning the data, loading the silver layer and post verification procedure as well.
+
+Usage
+-Please execute the below command to load silver layer
+
+EXEC silver.load_silver;
+
+
 -- Data Cleaning
 
 CREATE OR ALTER PROCEDURE silver.load_silver AS
@@ -890,6 +902,7 @@ BEGIN
 		PRINT'========================================='
 	END CATCH
 END
+
 
 
 
