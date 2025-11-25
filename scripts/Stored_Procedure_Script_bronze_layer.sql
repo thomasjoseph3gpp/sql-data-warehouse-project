@@ -1,3 +1,15 @@
+/*
+
+- This is a stored procedure created in order to load bronze layer
+- This helps to load the bronze layer all at once from teh data sources
+
+Usage
+-Pease run the below command to load bronze layer
+
+EXEC bronze.load_silver;
+
+*/
+
 
 CREATE OR ALTER PROCEDURE bronze.load_bronze AS
 BEGIN
@@ -179,5 +191,6 @@ BEGIN
 		PRINT'Error Mesaage:'+CAST(ERROR_STATE() AS VARCHAR(50));
 		PRINT'========================================='
 	END CATCH
+
 
 END
