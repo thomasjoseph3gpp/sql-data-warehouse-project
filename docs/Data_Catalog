@@ -1,0 +1,97 @@
+This document is to provide a detailed understanding on the tables and the corresponding columns.
+  There are three tables for use and they are
+    1. gold.dim_customers
+    2.gold.dim_products
+    3.gold.fact_sales
+
+
+1. gold.dim_customers
+
+* Purpose: This table stores the details of customers.
+*Columns:
+
+|------------------------------------------------------------------------------------------------------
+|Column Name      |  Data Type      |  Description                                                    |
+|-----------------------------------------------------------------------------------------------------|
+|customer_key     |      INT        | Surrogate Key uniquely identifies every record in the table     |
+|-----------------------------------------------------------------------------------------------------| 
+|customer_id      |      INT        | Unique numerical identifier assigned to each customer           |
+|-----------------------------------------------------------------------------------------------------|  
+|customer_number  |NVARCHAR(50)     | Alphanumeric identifier for tracking  and referencing           |
+|-----------------------------------------------------------------------------------------------------|     
+|first_name       |NVARCHAR(50)     | Customer's first name                                           |
+|-----------------------------------------------------------------------------------------------------|     
+|last_name        |NVARCHAR(50)     | Customer's last name                                            |  
+|-----------------------------------------------------------------------------------------------------|           
+|country          |NVARCHAR(50)     |Customer's country of residence                                  |                  
+|-----------------------------------------------------------------------------------------------------|
+|marital_status   |NVARCHAR(50)     | Customer's marital status                                       |
+|-----------------------------------------------------------------------------------------------------|
+|gender           |NVARCHAR(50)     | Customer's gender                                               |
+|-----------------------------------------------------------------------------------------------------|
+|birthdate        |DATE             | Customer's birthdate in 'YYYY-MM-DD' format                     |
+|-----------------------------------------------------------------------------------------------------|
+|create_date      |DATE             | Date on which the customer's record created in the system       |
+-------------------------------------------------------------------------------------------------------
+
+
+
+
+2. gold.dim_products
+
+* Purpose: This table stores the details of products.
+*Columns:
+
+|------------------------------------------------------------------------------------------------------
+|Column Name      |  Data Type      |  Description                                                    |
+|-----------------------------------------------------------------------------------------------------|
+|product_key      |INT        | Surrogate Key uniquely identifies every record in the table           |
+|-----------------------------------------------------------------------------------------------------| 
+|product_id       |INT        | Unique numerical identifier assigned to each customer                 |
+|-----------------------------------------------------------------------------------------------------|  
+|product_number   |NVARCHAR(50)     | Alphanumeric identifier for tracking  and referencing           |
+|-----------------------------------------------------------------------------------------------------|     
+|product_name     |NVARCHAR(50)     | Product Name                                                    |
+|-----------------------------------------------------------------------------------------------------|     
+|category_id      |NVARCHAR(50)     |Product category ID                                              |  
+|-----------------------------------------------------------------------------------------------------|           
+|category         |NVARCHAR(50)     |Products category name                                           |                  
+|-----------------------------------------------------------------------------------------------------|
+|subcategory      |NVARCHAR(50)     |Products subcategory name                                        |
+|-----------------------------------------------------------------------------------------------------|
+|maintenance      |NVARCHAR(50)     | whether product requires time to time maintenance or not        |
+|-----------------------------------------------------------------------------------------------------|
+|cost             |DATE             | cost of the product                                             |
+|-----------------------------------------------------------------------------------------------------|
+|product_line     |DATE             | the product belongs to which series( eg road, mountain..        |
+|-----------------|-----------------|-----------------------------------------------------------------|
+|start_date       |DATE             | Date on which the product's record created in the system        |
+-------------------------------------------------------------------------------------------------------
+
+
+3. gold.fact_sales
+
+* Purpose: This table stores the fact details of sales.
+*Columns:
+
+|------------------------------------------------------------------------------------------------------
+|Column Name      |  Data Type      |  Description                                                    |
+|-----------------------------------------------------------------------------------------------------|
+|order_number     |VARCHAR(50)      | Surrogate Key uniquely identifies every record in the table     |
+|-----------------------------------------------------------------------------------------------------| 
+|product_key      |INT              | Surrogate key linking the product table                         |
+|-----------------------------------------------------------------------------------------------------|  
+|customer_key     |INT              | Surrogate key linking the customer table            |           |
+|-----------------------------------------------------------------------------------------------------|     
+|order_date       |DATE             | Date on which order is placed ('YYYY-MM'DD')                    |
+|-----------------------------------------------------------------------------------------------------|     
+|ship_date        |DATE             | Date on which order is shipped ('YYYY-MM'DD')                   |  
+|-----------------------------------------------------------------------------------------------------|           
+|due_date         |DATE             |Date on which order is due ('YYYY-MM'DD')                        |                  
+|-----------------------------------------------------------------------------------------------------|
+|sales_amount     |INT              | Total amount of sales of the line item                          |
+|-----------------------------------------------------------------------------------------------------|
+|quantity         |INT              | Total quantity of the line items                                |
+|-----------------------------------------------------------------------------------------------------|
+|price            |INT              |Price of individual items                                        |
+|-----------------------------------------------------------------------------------------------------|
